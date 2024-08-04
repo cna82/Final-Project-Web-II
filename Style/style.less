@@ -1,0 +1,288 @@
+/*
+سلام استاد خسته نباشین با تشکر از زحمات شما و ضمن تبریک عید ،
+ سعی کردم از تمام توانم  برای این پروژه استفاده کنم، تا بدون نقص انجامش بدم
+ */
+
+/* از ابتدای پروژه تا اخر صفحه اول 
+و کل مدیا کوئری ها رو توی لس استایل دادم ، بقیه استایل ها داخل فایل ساس داده شده اند
+ */
+@import "general-selectors";
+@import "colors";
+
+// display flex mixin
+#d-flex(@direction,@wrap,@justify,@align) {
+  display: flex;
+  flex-flow: @direction @wrap;
+  justify-content: @justify;
+  align-items: @align;
+}
+// my font mixin
+#my-font(@family,@size) {
+  font-family: @family;
+  font-size: @size;
+}
+// a tag styles mixin
+#a-styles(@a-color) {
+  text-decoration: none;
+  color: @a-color;
+}
+body {
+  #my-font(sans-serif, 16px);
+}
+/* In here i used media query to adjust my font sizes and order the copmponents in correct places in other devices 
+such as (phones,tablets,small laptops & larger devices)  */
+@media screen and (max-width: 576px) {
+  .logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .links {
+    a {
+      #my-font(sans-serif, 16px);
+    }
+    margin-bottom: 20px !important;
+  }
+  .sample-text {
+    text-align: center;
+    margin-bottom: 20px !important;
+    span {
+      #my-font(Arial, 22px);
+    }
+    p {
+      #my-font(Arial, 16px);
+    }
+  }
+  main {
+    .fetures-child,
+    .features-child2 {
+      #d-flex(row, wrap, center, baseline);
+      text-align: right;
+      gap: 10px;
+    }
+  }
+
+  .features-content3 {
+    #d-flex(column, wrap, center, baseline);
+    gap: 20px !important;
+  }
+  footer {
+    .footer-text {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .links {
+    a {
+      #my-font(sans-serif, 18px);
+    }
+  }
+  .sample-text {
+    text-align: center;
+    span {
+      #my-font(Arial, 26px);
+    }
+    p {
+      #my-font(Arial, 18px);
+    }
+    .my-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  main {
+    .fetures-child,
+    .features-child2 {
+      #d-flex(row, wrap, center, baseline);
+      text-align: right;
+      gap: 10px;
+    }
+    .btn-features {
+      margin-bottom: 46px !important;
+    }
+    .features-text,
+    .features-text2 {
+      line-height: 34px;
+    }
+  }
+  footer {
+    .footer-text {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .links {
+    a {
+      #my-font(sans-serif, 20px);
+    }
+    margin-bottom: 128px;
+  }
+
+  .sample-text {
+    text-align: center;
+    margin-bottom: 95px;
+    span {
+      #my-font(Arial, 30px);
+      display: block;
+      margin: auto;
+    }
+    p {
+      #my-font(Arial, 22px);
+      line-height: 36px;
+    }
+    .my-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  main {
+    .fetures-child {
+      margin-top: 24px !important;
+      #d-flex(row, wrap, center, baseline);
+      align-self: stretch;
+      text-align: right;
+      gap: 10px;
+    }
+  }
+  .features-child2 {
+    #d-flex(row, wrap, center, baseline);
+    text-align: right;
+    gap: 10px;
+  }
+}
+footer {
+  .footer-text {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 993px) {
+  header {
+    gap: 108px;
+  }
+  .links {
+    a {
+      #my-font(sans-serif, 20px);
+    }
+  }
+  .sample-text {
+    margin-top: 21px;
+    padding-left: 40px !important;
+    span {
+      #my-font(Arial, 46px);
+    }
+    p {
+      #my-font(Arial, 17px);
+    }
+  }
+  main {
+    .fetures-child {
+      #d-flex(row, wrap, flex-end, baseline);
+      text-align: right;
+      gap: 20px;
+    }
+    .features-child2 {
+      #d-flex(row-reverse, wrap, flex-end, baseline);
+      gap: 20px;
+    }
+    .fetures-content1,
+    .features-content3 {
+      #d-flex(column, wrap, center, center);
+      gap: 43px;
+    }
+  }
+  footer {
+    .footer-text {
+      text-align: left;
+    }
+  }
+}
+header {
+  #d-flex(row,wrap,center,flex-start);
+  background-color: @bg-color1;
+  height: 100% !important;
+  padding-top: 6px;
+  nav {
+    width: 100%;
+    padding: 8px;
+    .logo {
+      gap: 5px;
+      span {
+        #my-font(sans-serif, 20px);
+      }
+    }
+    .links {
+      #d-flex(row,wrap,space-around,inherit);
+      gap: 12px;
+
+      a {
+        #a-styles(@white-color);
+        transition: text-shadow 0.5s;
+        &:hover:not(.active-page) {
+          border-bottom: 2px solid @white-color;
+          text-shadow: 3px 3px 8px @red-color;
+        }
+      }
+    }
+  }
+  .sample-text {
+    #d-flex(column,wrap,flex-start,flex-start );
+
+    span {
+      font-weight: bold;
+    }
+    p {
+      line-height: 26px;
+    }
+    .my-btn {
+      button {
+        margin: 6px;
+        padding: 8px;
+        width: 150px;
+        border-radius: 25px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .btn-learn-more {
+        transition: box-shadow 1s;
+        &:hover {
+          box-shadow: 0px 0px 3px 5px @gray-color;
+        }
+        a {
+         #a-styles(@blue-color);
+          #my-font(Arial, 14px);
+        }
+      }
+      .btn-get-started {
+        background-color: @bg-color1;
+        border: 2px solid @white-color;
+        a {
+          #my-font(Arial, 14px);
+         #a-styles(@white-color);
+        }
+        transition: all 1s;
+        &:hover {
+          box-shadow: 0px 0px 3px 5px @gray-color;
+          cursor: pointer;
+          background-color: @white-color;
+          a {
+            color: @blue-color;
+          }
+        }
+      }
+    }
+  }
+  .mobile-image {
+    #d-flex(row, wrap, center, center);
+  }
+}

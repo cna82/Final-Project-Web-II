@@ -1,0 +1,132 @@
+/* using sass partials  and import them for colors */
+@import'colors2';
+
+/* using mixins for suitable font family and <a> tag styles */
+@mixin my-font1 {
+    font-family: tahoma;
+}
+
+@mixin my-font2 {
+    font-family: Arial;
+}
+@mixin a-styles{
+    text-decoration: none;
+}
+
+/* using extend for display flex */
+.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main {
+    padding: 10px;
+  
+    .features-text,
+    .features-text2 {
+      width: 70%;
+    }
+  
+    .icons {
+      color: $white-color !important;
+      background: linear-gradient(to left, $bg-color1, $bg-color2);
+      border-radius: 50%;
+    }
+    .btn-features {
+      button {
+        padding: 8px;
+        width: 150px;
+        border-radius: 25px;
+        letter-spacing: 1px;
+        margin-top: 15px;
+        margin-bottom: 8px;
+        transition: all 1s;
+        a {
+          @include a-styles;
+          color: $black-color;
+          @include my-font2;
+          font-size: 15px;
+          font-weight: bold;
+        }
+        &:hover {
+          box-shadow: 0px 0px 4px 7px $bg-color1;
+        }
+      }
+      span {
+        font-weight: bold;
+        font-size: 36px;
+        background: linear-gradient(to right, $bg-color1, $bg-color2);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+  }
+
+article {
+    @extend .display-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background-color: $bg-color1;
+    width: 100%;
+    .icon-video {
+        font-size: 30px !important;
+        background-color: $white-color;
+        padding: 14px 16px 14px 16px;
+        border-radius: 50%;
+        color: $blue-color;
+        transition: all 1s;
+
+        &:hover {
+            background-color: $blue-color;
+            color: $white-color;
+            box-shadow: 0px 0px 5px 8px $pink-color;
+        }
+    }
+
+    .watch-video-text {
+        @include my-font2;
+        font-size: 25px;
+        color: $white-color;
+        font-weight: bold;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+    .badge-span {
+        padding: 9px;
+        width: 210px;
+        border-radius: 25px;
+        letter-spacing: 2px;
+        background-color: $badge-color;
+    }
+
+    p {
+        line-height: 33px;
+    }
+
+    .a-collapse {
+        text-decoration: none;
+        @include my-font1;
+        font-size: 19px;
+        color: $blue-color2;
+        transition: all 0.7s;
+
+        &:hover {
+            text-shadow: 4px 14px 3px $red-color2;
+            font-weight: bold;
+        }
+    }
+
+    .collapse-content {
+        background-color: $light-blue-color;
+    }
+}

@@ -1,0 +1,109 @@
+/* using sass partials  and import them for colors */
+/* using mixins for suitable font family and <a> tag styles */
+/* using extend for display flex */
+.display-flex, article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  padding: 10px;
+}
+main .features-text,
+main .features-text2 {
+  width: 70%;
+}
+main .icons {
+  color: #ffffff !important;
+  background: linear-gradient(to left, #34caff, #1565c0);
+  border-radius: 50%;
+}
+main .btn-features button {
+  padding: 8px;
+  width: 150px;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  transition: all 1s;
+}
+main .btn-features button a {
+  text-decoration: none;
+  color: #000000;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+}
+main .btn-features button:hover {
+  box-shadow: 0px 0px 4px 7px #34caff;
+}
+main .btn-features span {
+  font-weight: bold;
+  font-size: 36px;
+  background: linear-gradient(to right, #34caff, #1565c0);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+article {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background-color: #34caff;
+  width: 100%;
+}
+article .icon-video {
+  font-size: 30px !important;
+  background-color: #ffffff;
+  padding: 14px 16px 14px 16px;
+  border-radius: 50%;
+  color: #3949ab;
+  transition: all 1s;
+}
+article .icon-video:hover {
+  background-color: #3949ab;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px 8px #fd8498;
+}
+article .watch-video-text {
+  font-family: Arial;
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+footer .badge-span {
+  padding: 9px;
+  width: 210px;
+  border-radius: 25px;
+  letter-spacing: 2px;
+  background-color: #c8e5fd;
+}
+footer p {
+  line-height: 33px;
+}
+footer .a-collapse {
+  text-decoration: none;
+  font-family: tahoma;
+  font-size: 19px;
+  color: #3452ff;
+  transition: all 0.7s;
+}
+footer .a-collapse:hover {
+  text-shadow: 4px 14px 3px #ff4b4b;
+  font-weight: bold;
+}
+footer .collapse-content {
+  background-color: rgba(179, 245, 253, 0.862745098);
+}
+
+/*# sourceMappingURL=style2.css.map */
